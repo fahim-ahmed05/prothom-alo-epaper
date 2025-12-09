@@ -153,8 +153,8 @@ function Convert-ToPDF {
     )
 
     $images = Get-ChildItem -Path $SourceFolder -Filter *.jpg -File |
-        Sort-Object Name |
-        Select-Object -ExpandProperty FullName
+    Sort-Object Name |
+    Select-Object -ExpandProperty FullName
 
     if (-not $images -or $images.Count -eq 0) {
         throw "No images found to convert in: $SourceFolder"
@@ -167,14 +167,8 @@ function Convert-ToPDF {
 # Main Script
 # ---------------------------
 
-Write-Host -ForegroundColor Cyan "Creating today's PDF: $PdfFileName"
-
 if (-not (Test-ImageMagick)) {
     exit 1
-}
-
-if (-not (Test-Path $OutputFolder)) {
-    New-Item -ItemType Directory -Path $OutputFolder | Out-Null
 }
 
 if (Test-Path $PdfFilePath) {
@@ -186,6 +180,8 @@ Remove-TempFolder $TempFolder
 New-Item -ItemType Directory -Path $TempFolder | Out-Null
 
 try {
+    Write-Host -ForegroundColor Cyan "Creating today's PDF: $PdfFileName"
+
     Write-Host "Fetching metadata..."
     $html = Get-WebsiteHtml $WebsiteUrl
 
@@ -196,7 +192,11 @@ try {
     Get-Images $links $TempFolder
 
     Rename-DownloadedFiles $TempFolder
-
+    
+    if (-not (Test-Path $OutputFolder)) {
+        New-Item -ItemType Directory -Path $OutputFolder | Out-Null
+    }
+    
     Write-Host "Building PDF..."
     Convert-ToPDF $TempFolder $PdfFilePath
 

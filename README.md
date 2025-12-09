@@ -1,4 +1,4 @@
-# 📰 Prothom Alo ePaper → PDF Generator
+# 📰 Prothom Alo ePaper to PDF Generator
 
 This tool automatically downloads the **Prothom Alo ePaper** high-resolution pages and generates a clean, ordered **PDF**.
 
