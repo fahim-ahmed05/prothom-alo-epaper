@@ -11,7 +11,7 @@ Used to merge downloaded page images into a PDF.
 ### Windows Install
 
     # Winget
-    winget install --id ImageMagick.ImageMagick -e --source winget --accept-source-agreements --accept-package-agreements
+    winget install ImageMagick.ImageMagick
 
     # Scoop
     scoop install imagemagick
