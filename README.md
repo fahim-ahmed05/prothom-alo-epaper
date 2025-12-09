@@ -6,7 +6,7 @@ This tool automatically downloads the **Prothom Alo ePaper** high-resolution pag
 
 #### ImageMagick
 
-Download from the [website](https://imagemagick.org/script/download.php#windows) or install using winget:
+[Download](https://imagemagick.org/script/download.php#windows) from the website or install using winget.
 
 ```powershell
 winget install --id ImageMagick.ImageMagick -e --source winget --accept-source-agreements --accept-package-agreements
