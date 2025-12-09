@@ -8,12 +8,17 @@ This tool automatically downloads the **Prothom Alo ePaper** high-resolution pag
 
 Used to merge downloaded page images into a PDF.
 
-### Windows Install (Winget)
+### Windows Install
 
+    # Winget
     winget install --id ImageMagick.ImageMagick -e --source winget --accept-source-agreements --accept-package-agreements
 
-### macOS Install (Homebrew)
+    # Scoop
+    scoop install imagemagick
 
+### macOS Install
+
+    #Homebrew
     brew install imagemagick
 
 ### Linux Install
