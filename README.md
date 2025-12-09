@@ -5,13 +5,12 @@ This tool automatically downloads the **Prothom Alo ePaper** high-resolution pag
 ### 📌 Requirement
 
 #### ImageMagick
-Used to merge downloaded images into a PDF.
 
-If ImageMagick is **not installed**, the script will attempt:
+Download from the [website](https://imagemagick.org/script/download.php#windows) or install using winget:
 
-1. Automatic installation via **winget**
-2. If winget is unavailable or fails → show download link.
-
+```powershell
+winget install --id ImageMagick.ImageMagick -e --source winget --accept-source-agreements --accept-package-agreements
+```
 
 ### 🚀 How to Use
 

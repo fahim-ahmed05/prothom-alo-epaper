@@ -26,7 +26,8 @@ $ImageMagickDownloadUrl = "https://imagemagick.org/script/download.php#windows"
 # ---------------------------
 
 function Test-ImageMagick {
-    if (Get-Command magick.exe -ErrorAction SilentlyContinue) {
+    $cmd = Get-Command magick.exe -ErrorAction SilentlyContinue
+    if ($cmd) {
         return $true
     }
 
@@ -57,8 +58,6 @@ function Test-ImageMagick {
             Write-Host -ForegroundColor Yellow "Install manually: $ImageMagickDownloadUrl"
             return $false
         }
-
-        $null = Get-Command magick.exe -ErrorAction SilentlyContinue
 
         return $null -ne (Get-Command magick.exe -ErrorAction SilentlyContinue)
     }
@@ -154,11 +153,11 @@ function Convert-ToPDF {
     )
 
     $images = Get-ChildItem -Path $SourceFolder -Filter *.jpg -File |
-    Sort-Object Name |
-    Select-Object -ExpandProperty FullName
+        Sort-Object Name |
+        Select-Object -ExpandProperty FullName
 
-    if (-not $images) {
-        throw "No images found to convert."
+    if (-not $images -or $images.Count -eq 0) {
+        throw "No images found to convert in: $SourceFolder"
     }
 
     & magick.exe @images $PdfFilePath
@@ -168,15 +167,18 @@ function Convert-ToPDF {
 # Main Script
 # ---------------------------
 
-Write-Host -ForegroundColor Cyan "Prothom Alo ePaper → PDF"
+Write-Host -ForegroundColor Cyan "Creating today's PDF: $PdfFileName"
 
 if (-not (Test-ImageMagick)) {
     exit 1
 }
 
+if (-not (Test-Path $OutputFolder)) {
+    New-Item -ItemType Directory -Path $OutputFolder | Out-Null
+}
+
 if (Test-Path $PdfFilePath) {
-    Write-Host -ForegroundColor Yellow "Today's PDF already exists:"
-    Write-Host -ForegroundColor Green $PdfFilePath
+    Write-Host -ForegroundColor Yellow "Today's PDF already exists: $PdfFilePath"
     exit 0
 }
 
@@ -198,11 +200,8 @@ try {
     Write-Host "Building PDF..."
     Convert-ToPDF $TempFolder $PdfFilePath
 
-    Write-Host -ForegroundColor Green "PDF created!"
-    Write-Host -ForegroundColor Green $PdfFilePath
-    Write-Host -ForegroundColor Yellow "Temp folder kept: $TempFolder"
+    Write-Host -ForegroundColor Green "PDF created: $PdfFilePath"
 }
 catch {
     Write-Host -ForegroundColor Red "Error: $($_.Exception.Message)"
-    Write-Host -ForegroundColor Yellow "Temp folder kept for debugging: $TempFolder"
 }
