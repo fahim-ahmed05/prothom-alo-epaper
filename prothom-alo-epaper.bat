@@ -5,7 +5,7 @@ REM ================================
 REM CONFIGURATION
 REM ================================
 
-REM ⚠️ Replace this with your RAW GitHub URL
+REM Script's RAW GitHub URL
 set "SCRIPT_URL=https://raw.githubusercontent.com/fahim-ahmed05/prothom-alo-epaper/main/prothom-alo-epaper.ps1"
 
 REM Name to save the script as
