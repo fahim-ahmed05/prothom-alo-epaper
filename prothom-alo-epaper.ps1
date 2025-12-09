@@ -153,7 +153,7 @@ function Convert-ToPDF {
         [string]$PdfFilePath
     )
 
-    $images = Get-ChildItem -Path $SourceFolder -Include *.jpg -File |
+    $images = Get-ChildItem -Path $SourceFolder -Filter *.jpg -File |
     Sort-Object Name |
     Select-Object -ExpandProperty FullName
 
