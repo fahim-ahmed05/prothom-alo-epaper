@@ -2,9 +2,7 @@
 
 This tool automatically downloads the **Prothom Alo ePaper** high-resolution pages and generates a clean, ordered **PDF**.
 
-## 📌 Requirements
-
-### 🖼 ImageMagick (Required)
+## 🖼️ ImageMagick (Required)
 
 Used to merge downloaded page images into a PDF.
 
