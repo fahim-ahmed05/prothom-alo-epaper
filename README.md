@@ -39,7 +39,7 @@ Then, just double-click the `prothom-alo-epaper.bat` file.
 
 #### Option 2: Run Script Manually
 
-[Download](https://github.com/fahim-ahmed05/prothom-alo-epaper/archive/refs/heads/main.zip) or Clone the repo, then open a terminal inside the repo folder and run:
+[Download](https://github.com/fahim-ahmed05/prothom-alo-epaper/archive/refs/heads/main.zip) or Clone the repo, then open PowerShell inside the repo folder and run:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\prothom-alo-epaper.ps1
@@ -52,9 +52,9 @@ powershell -ExecutionPolicy Bypass -File .\prothom-alo-epaper.ps1
 └── prothom-alo_YYYYMMDD.pdf  
 ```
 
-### ❗ Notes
+### ❗ Note
 
-- If ImageMagick installs but PowerShell can't find `magick.exe`, restart your system or re-open PowerShell.
+If ImageMagick installs but PowerShell can't find `magick.exe`, restart your system or re-open PowerShell.
 
 ### ⭐ Support
 
