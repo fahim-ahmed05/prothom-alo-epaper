@@ -17,7 +17,7 @@ If ImageMagick is **not installed**, the script will attempt:
 
 #### Option 1: Run Using the Included BAT Launcher
 
-[Download](https://raw.githubusercontent.com/fahim-ahmed05/prothom-alo-epaper/main/prothom-alo-epaper.bat) or Create a file named `prothom-alo-epaper.bat`:
+[Download](https://raw.githubusercontent.com/fahim-ahmed05/prothom-alo-epaper/main/prothom-alo-epaper.bat) or Create a file named `prothom-alo-epaper.bat`.
 
 ```bat
 @echo off  
@@ -39,7 +39,7 @@ Then, just double-click the `prothom-alo-epaper.bat` file.
 
 #### Option 2: Run Script Manually
 
-[Download](https://github.com/fahim-ahmed05/prothom-alo-epaper/archive/refs/heads/main.zip) or Clone the repo, then open PowerShell inside the repo folder and run:
+[Download](https://github.com/fahim-ahmed05/prothom-alo-epaper/archive/refs/heads/main.zip) or Clone the repo, then open PowerShell inside the repo folder and run.
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File .\prothom-alo-epaper.ps1
@@ -58,7 +58,7 @@ If ImageMagick installs but PowerShell can't find `magick.exe`, restart your sys
 
 ### ⭐ Support
 
-If you find this tool useful, please consider starring the repository or supporting the development:
+If you find this tool useful, please consider starring the repository or supporting the development.
 
 <a href="https://www.buymeacoffee.com/fahim.ahmed" target="_blank">
   <img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" 
