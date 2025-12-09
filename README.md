@@ -50,7 +50,7 @@ Or download from the [official site](https://imagemagick.org/script/download.php
 
 Double-click `prothom-alo-epaper.bat` — it will download and run the script automatically.
 
-## Option 2: Run PowerShell Script Manually
+### Option 2: Run PowerShell Script Manually
 
 [Download](https://github.com/fahim-ahmed05/prothom-alo-epaper/archive/refs/heads/main.zip) or clone the repo then run inside the repo folder:
 
