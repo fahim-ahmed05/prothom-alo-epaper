@@ -31,7 +31,7 @@ function Test-ImageMagick {
         return $true
     }
 
-    Write-Host -ForegroundColor Yellow "ImageMagick not found. Trying winget..."
+    Write-Host -ForegroundColor Yellow "ImageMagick not found. Installing ImageMagick... Please close this window and run the script again."
 
     $wingetCmd = Get-Command winget -ErrorAction SilentlyContinue
     if (-not $wingetCmd) {
